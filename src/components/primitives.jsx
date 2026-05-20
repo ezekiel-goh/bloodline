@@ -239,6 +239,31 @@ export function SGMap({ w = 400, h = 220, dots = [], style }) {
   );
 }
 
+export function Modal({ open, onClose, children, w = 480 }) {
+  if (!open) return null;
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'absolute', inset: 0, background: 'rgba(20,18,15,0.45)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100,
+        animation: 'bl-fade 0.18s ease',
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: w, maxHeight: '80%', overflowY: 'auto', background: '#fff',
+          borderRadius: 10, padding: 20, fontFamily: 'inherit',
+          boxShadow: '0 24px 80px rgba(0,0,0,0.25)',
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export function FanChart() {
   const Wd = 760, Hd = 200, pad = 32;
   const days = 14;

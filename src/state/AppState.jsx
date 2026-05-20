@@ -22,6 +22,21 @@ export const initialState = {
   mobStep: 1,
   mobOrg: 'DBS · Group Tech',
   mobTime: { d: 'Tomorrow', t: 'Lunch · 11:30–14:00', cap: 'Mobile unit on-site' },
+
+  // View toggle: 'donor' | 'hsa'
+  view: 'donor',
+  showFlowMap: false,
+
+  // HSA console state
+  hsaTab: 'forecast',
+  hsaForecastView: 'map',
+  hsaToast: null,
+  hsaInbox: [],
+  surgeConfig: {
+    types: ['O−'],
+    tiers: [true, true, false],
+    channels: { push: true, sms: true, whatsapp: false, email: false },
+  },
 };
 
 export function AppProvider({ children }) {
@@ -34,6 +49,12 @@ export function AppProvider({ children }) {
     const id = setTimeout(() => set({ toast: null }), 2400);
     return () => clearTimeout(id);
   }, [s.toast]);
+
+  useEffect(() => {
+    if (!s.hsaToast) return;
+    const id = setTimeout(() => set({ hsaToast: null }), 2800);
+    return () => clearTimeout(id);
+  }, [s.hsaToast]);
 
   useEffect(() => {
     if (s.surgeActive) {

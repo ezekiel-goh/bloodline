@@ -91,6 +91,20 @@ export function TweaksPanel() {
         </button>
       </div>
       <div className="twk-body">
+        <div className="twk-sect">View</div>
+        <Segmented
+          label="Surface"
+          value={s.view}
+          options={[
+            { value: 'donor', label: 'Donor app' },
+            { value: 'hsa',   label: 'HSA console' },
+          ]}
+          onChange={(v) => set({ view: v })}
+        />
+        <button className="twk-btn secondary" onClick={() => set({ showFlowMap: true })}>
+          Open flow map
+        </button>
+
         <div className="twk-sect">Demo controls</div>
         <button
           className="twk-btn"
