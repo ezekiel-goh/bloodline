@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="512" height="512">
+  <title>BloodLine</title>
+  <mask id="pulse">
+    <rect width="200" height="200" fill="#fff"></rect>
+    <path d="M 50 110 L 78 110 L 90 80 L 105 140 L 118 100 L 132 120 L 150 110" fill="none" stroke="#000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+  </mask>
+  <path d="M 100 30 C 100 30, 60 75, 60 115 C 60 145, 78 165, 100 165 C 122 165, 140 145, 140 115 C 140 75, 100 30, 100 30 Z" fill="#b83a33" mask="url(#pulse)"></path>
+</svg>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BloodLine · Interactive prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#1a1917" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="BloodLine" />
+    <meta
+      name="description"
+      content="BloodLine — a crisis resilience layer for Singapore's national blood supply. Predict, surge, retain."
+    />
+    <style>
+      html, body {
+        margin: 0; padding: 0; background: #e6e3da;
+        font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+        color: #1a1917; overflow: hidden;
+      }
+      #root { width: 100vw; height: 100vh; }
+
+      @keyframes bl-pulse {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(214, 40, 40, 0.5); }
+        50%      { opacity: 0.6; box-shadow: 0 0 0 6px rgba(214, 40, 40, 0); }
+      }
+      @keyframes bl-fade {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      @keyframes bl-slideup {
+        from { transform: translateY(20px); opacity: 0; }
+        to   { transform: translateY(0);    opacity: 1; }
+      }
+      @keyframes bl-pop {
+        0%   { transform: scale(0.4); opacity: 0; }
+        70%  { transform: scale(1.08); }
+        100% { transform: scale(1); opacity: 1; }
+      }
+
+      table th, table td { white-space: nowrap; }
+      button:disabled { cursor: not-allowed !important; opacity: 0.5; }
+      [data-phone] ::-webkit-scrollbar { width: 0; height: 0; }
+    </style>
+    <script type="module" crossorigin src="/assets/index-ND2fJP3E.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
